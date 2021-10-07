@@ -77,3 +77,19 @@ order by Letnik, slst desc;
 -- povpreèno sladkorno stopnjo izraèunamo kot povpreèje sladkornih stopenj nato delimo s kolièino, izpis uredi po letnikih in
 -- po sladkornih stopnjah, padajoèe
 -- primerjaj rezultate 24. in 25. naloge. Kateri so po tvojem mnenju pravilni? Zakaj?
+
+
+CREATE TABLE [dbo].[Grozdje](
+	[Sifra_sorta] [int] NOT NULL primary key,
+	[ImeS] [nvarchar](255) NULL,
+	[Sifrav] [int] NULL,
+	[SifraUE] [nvarchar](255) NULL,
+	[Barva] [nvarchar](255) NULL,
+);
+
+insert into Grozdje select*from Sorta;
+
+insert into Grozdje(Sifra_sorta, ImeS) values (5001, 'Laški rizlink');
+
+update sorta set Barva = 'belo' where Barva is null;
+
