@@ -22,7 +22,7 @@ select cast([SalesOrderNumber] as nvarchar(10))+' ('+cast([RevisionNumber] as nv
 --6. Ponovno je treba izpisati vse podatke o kontaktih, èe kontakt nima srednjega imena v obliki
 --<first name> <last name>, èe ga pa ima <first name> <middle name> <last name> (na primer
 --Keith Harris, Jane M. Gates)
-select [FirstName]+' '+isnull([MiddleName],'')+' '+[LastName] from [SalesLT].[Customer]
+select [FirstName]+' '+isnull([MiddleName],' ')+''+[LastName] from [SalesLT].[Customer]
 --7. Stranka nam je posredovala e-mail nalov, telefon ali oboje. Èe je dostopen e-mail, ga
 --uporabimo za primarni kontakt, sicer uporabimo telefonsko številko. Napiši poizvedbo, ki
 --vrne CustomerID in stolpec »PrimarniKontakt«, ki vsebuje e-mail ali telefonsko številko. (v
